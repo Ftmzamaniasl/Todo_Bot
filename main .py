@@ -1,5 +1,9 @@
 from telebot import TeleBot
+import Base.handler
+import Routine.handler
 from config import *
+import Base
+import Routine
 
 
 class TelBot:
@@ -7,12 +11,12 @@ class TelBot:
     def __init__(self):
         self.token = token
         self.bot = TeleBot(self.token)
-        # self.handler = HandlerMain(self.bot)
 
 
     def start(self):
-        self.handler.handle()
-
+        Base.handler.handle(self.bot)
+        Routine.handler.handle(self.bot)
+        
 
     def run_bot(self):
         self.start()

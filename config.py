@@ -1,1 +1,8 @@
-token = "7515957144:AAH5uAMkZH9TuOobl6fz0HMhb1SFyc3gBsk"
+from dotenv import load_dotenv
+import os
+
+
+load_dotenv()
+
+token = os.getenv('TELEGRAM_BOT_TOKEN')
+

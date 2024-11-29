@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, Text, Boolean
 from sqlalchemy.orm import sessionmaker
 
-connection_str = "sqlite:///data230.db"
+connection_str = "sqlite:///data.db"
 engine = create_engine(connection_str)
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
@@ -52,7 +52,6 @@ class Activity(Base) :
         session.commit()
 
 Base.metadata.create_all(engine)
-
 
 
 

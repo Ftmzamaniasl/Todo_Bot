@@ -1,11 +1,6 @@
 from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-def main_keyboard():
-    markup = InlineKeyboardMarkup()
-    button1 = InlineKeyboardButton("فعالیت های آینده", callback_data="future_activities") 
-    button2 = InlineKeyboardButton("فعالیت های روتین🔖", callback_data="routin_activities")
-    markup.add(button2).add(button1)
-    return markup
+
 
 def routin_keyboard():
     markup = InlineKeyboardMarkup()
@@ -17,9 +12,31 @@ def routin_keyboard():
     markup.add(button1 ,button2).add(button3, button4).add(button5)
     return markup
 
+ 
+def delete_keyboard():
+    markup = InlineKeyboardMarkup()
+    button1 = InlineKeyboardButton("خالی کردن لیست", callback_data="delet_all")
+    markup.add(button1)
+    return markup
+
+
+def confirmation_keyboard():
+    markup = InlineKeyboardMarkup()
+    button1 = InlineKeyboardButton("بله", callback_data="Yes") 
+    button2 = InlineKeyboardButton("خیر", callback_data="No")
+    markup.add(button1, button2)
+    return markup
+
 
 def comeback_routin_keyboard():
     markup = InlineKeyboardMarkup()
     button1 = InlineKeyboardButton("برگشتن", callback_data="back_to_routine_menu") 
     markup.add(button1)
+    return markup
+
+
+def cancel_keyboard():
+    markup = InlineKeyboardMarkup()
+    butten = InlineKeyboardButton("انصراف", callback_data="back_to_routine_menu")
+    markup.add(butten)
     return markup
